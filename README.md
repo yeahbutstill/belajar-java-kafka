@@ -15,7 +15,7 @@
 ![Diagram Topic](pic/img_1.png)
 
 # Message 
-- Data yang kita kirim ke topic di Kafka kita sebut Message 
+- Data yang kita kirim ke topic di Kafka kita sebut Message (kalau di database biasanya kita sebut baris data atau row data atau record data)
 - Message merupakan data dengan struktur yang sudah ditentukan oleh Kafka 
 - Walaupun kenyataannya mungkin jarang digunakan, namun kita perlu tahu informasi yang terdapat di Message
 
