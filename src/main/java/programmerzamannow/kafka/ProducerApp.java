@@ -21,7 +21,7 @@ public class ProducerApp {
     KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
     for (int i = 0; i < 10; i++) {
-      ProducerRecord<String, String> message = new ProducerRecord<>("helloworld", Integer.toString(i), "Hello " + i);
+      ProducerRecord<String, String> message = new ProducerRecord<>("cms", Integer.toString(i), "Hello " + i);
       producer.send(message).get();
     }
 

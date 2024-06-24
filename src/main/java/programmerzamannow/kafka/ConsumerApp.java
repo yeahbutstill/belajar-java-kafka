@@ -21,7 +21,7 @@ public class ConsumerApp {
     properties.put(ConsumerConfig.GROUP_ID_CONFIG, "java");
 
     KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
-    consumer.subscribe(List.of("helloworld"));
+    consumer.subscribe(List.of("cms"));
 
     while (true){
       ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(1));
