@@ -25,5 +25,24 @@
 - Header adalah informasi tambahan untuk message 
 - Key adalah id untuk message, Key ini bukan seperti Primary Key di database, Key di Kafka boleh sama antar Message 
 - Value adalah isi data untuk message
+
 ![Struktur Message](pic/img_2.png)
 
+# Producer
+- Producer adalah pihak yang mengirim Message ke Kafka 
+- Contoh pada kasus sebelumnya, aplikasi Order adalah Producer untuk Message Order 
+- Kafka sendiri menyediakan aplikasi sederhana berbasis terminal untuk Producer, namun aplikasi ini hanya sederhana 
+- Untuk praktek yang lebih kompleks, kita akan coba simulasikan di bagian akhir menggunakan bahasa pemrograman Java
+- Perlu diingat, setiap mengirim Message ke Kafka, maka akan disimpan di urutan paling akhir
+
+# Consumer
+- Consumer adalah aplikasi yang membaca/menerima data dari Kafka 
+- Pada kasus sebelumnya, aplikasi Logistic dan Payment adalah Consumer untuk Message Order 
+- Membaca data dari Kafka akan dilakukan secara berurutan dari nomor Message paling awal sampai paling akhir
+
+# Diagram PUB/SUB
+- ![PUB/SUB](pic/img_3.png)
+
+# Publish Subscribe
+- Ketika kita mengirim lagi data ke Topic yang sedang dibaca oleh Consumer, secara otomatis data akan dibaca oleh Consumer 
+- Sehingga kita tidak perlu menjalankan ulang aplikasi Consumer dari awal lagi
