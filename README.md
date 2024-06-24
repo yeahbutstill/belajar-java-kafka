@@ -14,3 +14,16 @@
 # Diagram Topic Log
 ![Diagram Topic](pic/img_1.png)
 
+# Message 
+- Data yang kita kirim ke topic di Kafka kita sebut Message 
+- Message merupakan data dengan struktur yang sudah ditentukan oleh Kafka 
+- Walaupun kenyataannya mungkin jarang digunakan, namun kita perlu tahu informasi yang terdapat di Message
+
+# Struktur Message
+- Topic adalah nama topic untuk menyimpan message 
+- Partition adalah nomor partisi untuk menyimpan message 
+- Header adalah informasi tambahan untuk message 
+- Key adalah id untuk message, Key ini bukan seperti Primary Key di database, Key di Kafka boleh sama antar Message 
+- Value adalah isi data untuk message
+![Struktur Message](pic/img_2.png)
+
