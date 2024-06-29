@@ -52,3 +52,13 @@
 - Sebelumnya kita tidak menyebutkan Consumer Group yang kita gunakan, yang jika tidak disebutkan, secara otomatis akan dibuatkan baru oleh Kafka 
 - Namun pada kenyataannya saat membuat aplikasi, Consumer Group pasti akan selalu kita sebutkan 
 - Biasanya Consumer Group kebanyakan menggunakan nama aplikasi yang menjadi Consumer nya
+
+# Tanpa Menyebutkan Consumer Group
+- Jika kita tidak menyebutkan Consumer Group, secara otomatis akan dibuat Consumer Group baru 
+- Dan saat membaca data dari Topic, Kafka hanya akan memberikan data ke Consumer dengan Consumer Group secara unik, artinya tidak akan diberikan dua kali ke Consumer yang menggunakan Consumer Group yang sama 
+- Jika Consumer Group selalu berbeda-beda, maka secara otomatis data akan diterima berkali-kali 
+- Kita liat contohnya, misal aplikasi Payment akan menjadi Consumer dari Message Order, namun Payment tidak menggunakan Consumer Group
+
+# Tanpa Consumer Group
+![Tanpa Consumer Group](pic/img_4.png)
+
