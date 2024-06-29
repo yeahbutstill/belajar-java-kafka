@@ -46,3 +46,9 @@
 # Publish Subscribe
 - Ketika kita mengirim lagi data ke Topic yang sedang dibaca oleh Consumer, secara otomatis data akan dibaca oleh Consumer 
 - Sehingga kita tidak perlu menjalankan ulang aplikasi Consumer dari awal lagi
+
+# Consumer Group
+- Saat Consumer membaca data dari Topic, maka Consumer permu menentukan Consumer Group yang digunakan 
+- Sebelumnya kita tidak menyebutkan Consumer Group yang kita gunakan, yang jika tidak disebutkan, secara otomatis akan dibuatkan baru oleh Kafka 
+- Namun pada kenyataannya saat membuat aplikasi, Consumer Group pasti akan selalu kita sebutkan 
+- Biasanya Consumer Group kebanyakan menggunakan nama aplikasi yang menjadi Consumer nya
