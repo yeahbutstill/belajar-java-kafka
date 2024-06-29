@@ -89,3 +89,18 @@
 - Saat pertama kali Consumer berjalan, data Offset tidak ada, oleh karena itu kita harus menentukan mau di awal (--from-beginning) atau mau dari data baru? 
 - Namun ketika Consumer berjalan, lalu membaca data, maka Consumer akan menyimpan informasi Offset (data terakhir yang dibaca), dengan begitu ketika aplikasi Consumer dihentikan, lalu dijalankan ulang, maka Consumer bisa mendapatkan informasi Offset terakhir, dan melanjutkan membaca data dari Offset terakhir 
 - Informasi Offset disimpan dengan informasi Consumer Group, yang artinya jika kita menjalankan Consumer dengan Consumer Group yang berbeda, maka informasi Offset otomatis akan hilang
+
+# Partition
+- Saat kita membuat Topic, Kafka akan menyimpan data Topic tersebut dalam Partition. Dan jumlah Partition secara default adalah 1 
+- Partition di Kafka, hanya bisa dibaca oleh 1 Consumer, disinilah jawaban kenapa data yang kita kirim di awal selalu diterima oleh 1 Consumer, tidak pernah berpindah ke Consumer yang lain, sampai Consumer tersebut dihentikan, baru data akan berpindah ke Consumer lainnya 
+- Kafka, bisa menyimpan data Topic dalam beberapa Partisi 
+- Dengan begitu, kita bisa membuat beberapa Consumer bekerja, karena ada cukup Partisi yang bisa dibaca oleh Consumer 
+- Kita akan coba simulasikan bagaimana Consumer bekerja ketika jumlah Partisi ada banyak
+
+![Partition](pic/img_6.png)
+![Partition](pic/img_7.png)
+![Partition](pic/img_8.png)
+![Partition](pic/img_9.png)
+![Partition](pic/img_10.png)
+![Partition](pic/img_11.png)
+
