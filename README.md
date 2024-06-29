@@ -104,3 +104,19 @@
 ![Partition](pic/img_10.png)
 ![Partition](pic/img_11.png)
 
+# Menambah Partition
+- Secara default, saat kita membuat Topic, maka jumlah Partition hanya 1 
+- Kita bisa menentukan jumlah Partition saat membuat Topic, atau mengubah jumlah Partition di Topic yang sudah kita buat 
+- Untuk membuat Topic dengan Partition :
+  kafka-topics.sh --bootstrap-server <connection-string>:<port> --create --topic <string> --partitions <number>
+- Untuk mengubah Topic yang sudah dibuat :
+  kafka-topics.sh --bootstrap-server <connection-string>:<port> --alter --topic <string> --partitions <number>
+- Untuk melihat detail Topic yang sudah dibuat :
+  kafka-topics.sh --bootstrap-server <connection-string>:<port> --describe --topic <string>
+
+# Latihan 
+- Jalankan 3 Consumer ke Topic helloworld, lalu coba kirim data ke Topic helloworld 
+- Coba matikan satu persatu Consumer, dan sisakan 1 Consumer, sambil mengirim data ke Topic helloworld 
+- Cek lagi Offset untuk Consumer Group yang digunakan
+
+# 
