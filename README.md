@@ -62,3 +62,14 @@
 # Tanpa Consumer Group
 ![Tanpa Consumer Group](pic/img_4.png)
 
+# Menggunakan Consumer Group
+- Jika Consumer menggunakan Consumer Group, maka Consumer-Consumer yang menggunakan Consumer Group yang sama akan dianggap satu kesatuan 
+- Oleh karena itu, data tidak akan dikirim berkali-kali ke semua Consumer, melainkan hanya sekali ke Consumer Group (Consumer akan dipilih dari Consumer Group yang sama)
+- Dengan begitu, kita tidak akan menerima data berkali-kali
+
+# Menggunakan Consumer Group
+![Menggunakan Consumer Group](pic/img_5.png)
+
+# Latihan
+- Silahkan coba jalankan lebih dari satu Consumer dengan Consumer Group sama, dan kirim Message ke topic tersebut. Pastikan hanya satu Consumer yang mendapatkan data 
+- Coba matikan Consumer yang sebelumnya menerima data, lalu coba kirim lagi data baru. Pastikan Consumer lainnya secara otomatis mendapatkan data baru tersebut
