@@ -119,4 +119,26 @@
 - Coba matikan satu persatu Consumer, dan sisakan 1 Consumer, sambil mengirim data ke Topic helloworld 
 - Cek lagi Offset untuk Consumer Group yang digunakan
 
-# 
+# Memilih Partition
+- Saat kita mengirim data ke Topic, bagaimana cara menentukan Partition mana yang akan digunakan untuk menyimpan data? 
+- Contoh, kenapa sebelumnya saat kita mengirim data, selalu masuk ke Partition yang sama? Tidak pernah berubah? 
+- Jawabannya adalah penentuan Partition, ditentukan oleh Key pada Message yang kita kirim 
+- Sebelumnya, saat kita mengirim data menggunakan Console Producer, Key yang digunakan adalah null (kosong), secara otomatis akan selalu dikirim ke Partition yang sama
+ 
+# Key Routing
+- Key di Kafka Message tidak seperti Primary Key di Database, Key di Kafka Message salah satunya digunakan untuk menentukan Partition yang dipilih 
+- Saat menentukan Partition mana yang akan dipilih, Kafka akan menggunakan rumus :
+  hash(message.key) % total partition 
+- Misal ketika kita mengirim Message dengan key “eko”, dengan jumlah Partition 2, maka, Partition yang dipilih adalah:
+  hash(eko) % 2 
+- Misal saja, hasil perhitungan hash(eko) = 8, artinya :
+  8 % 2 = 0 
+- Artinya Message akan disimpan di Partition 0 
+- Oleh karena itu, Key yang sama, pasti akan selalu masuk ke Partition yang sama
+
+# Console Producer
+- Defaultnya, Console Producer akan menggunakan Key null (kosong) ketika mengirim data. 
+- Jika kita ingin menentukan Key, kita bisa tambahkan parameter --property "parse.key=true" --property "key.separator=:"
+
+# Console Consumer
+- Untuk melihat Key yang ada di Message, di Console Consumer, kita bisa tambahkan perintah --property “print.key=true”
