@@ -142,3 +142,9 @@
 
 # Console Consumer
 - Untuk melihat Key yang ada di Message, di Console Consumer, kita bisa tambahkan perintah --property “print.key=true”
+
+# Kafka Client
+- Sebelumnya, kita sudah mencoba membuat Producer dan Consumer menggunakan Kafka Console Producer dan Consumer 
+- Namun pada kenyataanya, saat kita membuat aplikasi, kita harus membuat Producer dan Consumer langsung di aplikasi yang kita buat 
+- Untungnya, ekosistem Kafka sudah sangat matang dan besar, sehingga kita tidak akan kesulitan ketika menggunakan Kafka 
+- Di materi-materi selanjutnya, kita akan coba menggunakan teknologi Golang, NodeJS dan Java untuk membuat Producer dan Consumer Kafka
